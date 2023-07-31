@@ -17,9 +17,23 @@ function App() {
         >
           Learn React
         </a>
+        <MyApp/>
+      <MyButton/>
       </header>
+    
     </div>
   );
+ 
+}
+function MyButton() {
+  return (
+    <button>I'm a button</button>
+  );
+}
+function MyApp(){
+  return (
+    <p>This is paragraph</p>
+  )
 }
 
 export default App;
