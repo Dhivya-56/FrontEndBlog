@@ -3,15 +3,43 @@ import './App.css';
 import NavBar from './nav';
 import Content from './content';
 function App(){
+  const data2=[{
+    title:'blog1',
+    author:'divi'
+    },
+    {
+      title:'blog2',
+      author:'priya'
+    }
+  ]
+  const age=23;
   return(
     <div className="container">
     {/* <p>Hello world</p> */}
+    <div className='inside-app'>
     <NavBar/>
+ 
     <hr></hr>
-    <Content/>
+   
+    <Content data={data2} age={age}/>
+   
+    </div>
     </div>
   )
 }export default App
+
+
+
+
+
+
+
+
+
+
+
+
+
 // function App() {
 //   return (
 //     <div className="App">

@@ -1,0 +1,35 @@
+body{
+background-color: aqua;
+}
+.mydiv{
+    display:none;
+}
+.samp{
+  margin-left: 570px;
+}
+select {
+    width: 200px;
+    padding: 5px;
+    font-size: 16px;
+}
+button{
+    height: 30px;
+}
+
+select option:nth-child(odd) {
+   
+    background-color: #8eb2e5;
+    color: #333;
+}
+
+select option:nth-child(even) {
+   
+    background-color: #bbe88d;
+    color: #000;
+}
+
+
+
+
+
+

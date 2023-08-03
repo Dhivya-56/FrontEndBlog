@@ -1,52 +1,96 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sample Document</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Sample file to create repository</h1>
-    <p>Dhivya</p>
+    <div class="samp">
+        <h1>Sample</h1>
+        <select id="options">
+            <option>    </option>
+        </select>
+        <button onClick="fetchData()">click</button>
+    </div>
+    <div class="mydiv" style="display: none;">
+        <p id="error-message"></p>
+    </div>
 </body>
 <script>
-  //SET INTERVAL
+    function fetchData() {
+        fetch('https://pokeapi.co/api/v2/ability123')
+        .then((response) => {
+            if (response.ok) {
+                
+                return response.json();
+            } else {
+                throw new Error(`API call failed with status ${response.status}`);
+            }
+        })
+        .then((data) => {
+            let res =data.results;
+            console.log(res)
 
-
-//     function printNumber(n){
-//     for(let i=1;i<=n;i++){
-//    set=setInterval(()=>{
-//         console.log(i)
-//     },3000)
-//      setTimeout(()=>{
-//     clearInterval(set)
-//     },6000)
-// }
-// }
-// printNumber(10)
-
-//SET TIME OUT
-
-// function printNumber(n){
-//     for(let i=1;i<=n;i++){
-//     setTimeout(()=>{
-//         console.log(i)
-//     },i*2000)
-//     }
-// }printNumber(10)
-
-
-
-// OR ELSE
-
-
-// function printNumber(n){
-//     for(let i=1;i<=n;i++){
-//     setTimeout(()=>{
-//         console.log(i)
-//     },(i*i-1)*1000)
-//     console.log((i*i-1)*1000)
-//     }
-// }printNumber(10)
-    </script>
+            let select = document.querySelector("#options");
+            res.map(item => {
+                console.log(item)
+                let selecting = document.createElement('option');
+              
+                selecting.innerText = item.name;
+                console.log(selecting.innerText)
+                select.appendChild(selecting);
+            });
+            
+            
+            document.querySelector('.samp').style.display = "block";
+            document.querySelector('.mydiv').style.display = "none";
+        }) 
+        .catch(error => {
+      
+            document.querySelector('.samp').style.display = "none";
+            document.querySelector('.mydiv').style.display = "block";
+            document.getElementById('error-message').innerText = error.message;
+        });
+    }
+</script>
 </html>
+
+<!-- SET INTERVAL
+ var set;
+     function printNumber(n){
+     for(let i=1;i<=n;i++){
+        set=setInterval(()=>{
+        console.log(i)
+    },3000)
+     setTimeout(()=>{
+    clearInterval(set)
+     },6000)
+ }
+ }
+printNumber(10)
+
+SET TIME OUT
+
+ function printNumber(n){
+    for(let i=1;i<=n;i++){
+    setTimeout(()=>{
+        console.log(i)
+     },i*2000)
+    }
+}printNumber(10)
+
+
+
+OR ELSE
+
+
+ function printNumber(n){
+    for(let i=1;i<=n;i++){
+  setTimeout(()=>{
+        console.log(i)
+   },(i*i-1)*1000)
+    console.log((i*i-1)*1000)
+    }
+ }printNumber(10)
+  -->
