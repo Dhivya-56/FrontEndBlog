@@ -19,7 +19,7 @@
 </body>
 <script>
     function fetchData() {
-        fetch('https://pokeapi.co/api/v2/ability123')
+        fetch('https://pokeapi.co/api/v2/ability')
         .then((response) => {
             if (response.ok) {
                 
@@ -51,6 +51,7 @@
             document.querySelector('.samp').style.display = "none";
             document.querySelector('.mydiv').style.display = "block";
             document.getElementById('error-message').innerText = error.message;
+            
         });
     }
 </script>

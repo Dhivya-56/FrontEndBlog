@@ -36,7 +36,13 @@
     transform: rotate(360deg);
   }
 } */
-body{
+
+
+
+/* Bloglist styles */
+
+
+/* body{
   margin-left:160px;
   margin-right: 160px;
 }
@@ -88,4 +94,11 @@ background-color: yellow;
   left:240px;
   height: 10px;
   top:10px;
+} */
+
+
+.container{
+  border: 1px solid black;
+  width:170px;
+  height:180px;
 }
